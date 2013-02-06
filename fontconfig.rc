@@ -17,5 +17,6 @@ pub mod fontconfig;
 
 #[nolink]
 #[cfg(target_os = "linux")]
+#[cfg(target_os = "android")]
 #[link_args = "-lfontconfig"]
 extern { }
