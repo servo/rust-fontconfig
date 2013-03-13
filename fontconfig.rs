@@ -21,12 +21,12 @@ const FcTypeLangSet: u32 = 8_u32;
 
 type FcType = enum__FcType;
 
-type struct__FcMatrix = {
+struct struct__FcMatrix {
     xx: c_double,
     xy: c_double,
     yx: c_double,
     yy: c_double,
-};
+}
 
 type FcMatrix = struct__FcMatrix;
 
@@ -34,18 +34,18 @@ type struct__FcCharSet = c_void;
 
 type FcCharSet = struct__FcCharSet;
 
-type struct__FcObjectType = {
+struct struct__FcObjectType {
     object: *c_char,
     _type: FcType,
-};
+}
 
 type FcObjectType = struct__FcObjectType;
 
-type struct__FcConstant = {
+struct struct__FcConstant {
     name: *FcChar8,
     object: *c_char,
     value: c_int,
-};
+}
 
 type FcConstant = struct__FcConstant;
 
@@ -66,26 +66,26 @@ type struct__FcLangSet = c_void;
 
 type FcLangSet = struct__FcLangSet;
 
-type struct__FcValue = {
+struct struct__FcValue {
     _type: FcType,
     u: union_unnamed1,
-};
+}
 
 type FcValue = struct__FcValue;
 
-type struct__FcFontSet = {
+struct struct__FcFontSet {
     nfont: c_int,
     sfont: c_int,
     fonts: **FcPattern,
-};
+}
 
 type FcFontSet = struct__FcFontSet;
 
-type struct__FcObjectSet = {
+struct struct__FcObjectSet {
     nobject: c_int,
     sobject: c_int,
     objects: **c_char,
-};
+}
 
 type FcObjectSet = struct__FcObjectSet;
 

@@ -5,3 +5,8 @@
 extern mod std;
 
 pub mod fontconfig;
+
+#[nolink]
+#[cfg(target_os = "linux")]
+#[link_args = "-lfontconfig"]
+extern mod linkhack_linux { }
