@@ -9,15 +9,15 @@ type FcChar32 = c_uint;
 type FcBool = c_int;
 
 type enum__FcType = c_uint;
-const FcTypeVoid: u32 = 0_u32;
-const FcTypeInteger: u32 = 1_u32;
-const FcTypeDouble: u32 = 2_u32;
-const FcTypeString: u32 = 3_u32;
-const FcTypeBool: u32 = 4_u32;
-const FcTypeMatrix: u32 = 5_u32;
-const FcTypeCharSet: u32 = 6_u32;
-const FcTypeFTFace: u32 = 7_u32;
-const FcTypeLangSet: u32 = 8_u32;
+static FcTypeVoid: u32 = 0_u32;
+static FcTypeInteger: u32 = 1_u32;
+static FcTypeDouble: u32 = 2_u32;
+static FcTypeString: u32 = 3_u32;
+static FcTypeBool: u32 = 4_u32;
+static FcTypeMatrix: u32 = 5_u32;
+static FcTypeCharSet: u32 = 6_u32;
+static FcTypeFTFace: u32 = 7_u32;
+static FcTypeLangSet: u32 = 8_u32;
 
 type FcType = enum__FcType;
 
@@ -50,11 +50,11 @@ struct struct__FcConstant {
 type FcConstant = struct__FcConstant;
 
 type enum__FcResult = c_uint;
-const FcResultMatch: u32 = 0_u32;
-const FcResultNoMatch: u32 = 1_u32;
-const FcResultTypeMismatch: u32 = 2_u32;
-const FcResultNoId: u32 = 3_u32;
-const FcResultOutOfMemory: u32 = 4_u32;
+static FcResultMatch: u32 = 0_u32;
+static FcResultNoMatch: u32 = 1_u32;
+static FcResultTypeMismatch: u32 = 2_u32;
+static FcResultNoId: u32 = 3_u32;
+static FcResultOutOfMemory: u32 = 4_u32;
 
 type FcResult = enum__FcResult;
 
@@ -90,23 +90,23 @@ struct struct__FcObjectSet {
 type FcObjectSet = struct__FcObjectSet;
 
 type enum__FcMatchKind = c_uint;
-const FcMatchPattern: u32 = 0_u32;
-const FcMatchFont: u32 = 1_u32;
-const FcMatchScan: u32 = 2_u32;
+static FcMatchPattern: u32 = 0_u32;
+static FcMatchFont: u32 = 1_u32;
+static FcMatchScan: u32 = 2_u32;
 
 type FcMatchKind = enum__FcMatchKind;
 
 type enum__FcLangResult = c_uint;
-const FcLangEqual: u32 = 0_u32;
-const FcLangDifferentCountry: u32 = 1_u32;
-const FcLangDifferentTerritory: u32 = 1_u32;
-const FcLangDifferentLang: u32 = 2_u32;
+static FcLangEqual: u32 = 0_u32;
+static FcLangDifferentCountry: u32 = 1_u32;
+static FcLangDifferentTerritory: u32 = 1_u32;
+static FcLangDifferentLang: u32 = 2_u32;
 
 type FcLangResult = enum__FcLangResult;
 
 type enum__FcSetName = c_uint;
-const FcSetSystem: u32 = 0_u32;
-const FcSetApplication: u32 = 1_u32;
+static FcSetSystem: u32 = 0_u32;
+static FcSetApplication: u32 = 1_u32;
 
 type FcSetName = enum__FcSetName;
 
@@ -116,8 +116,8 @@ type FcAtomic = struct__FcAtomic;
 
 
 type FcEndian = c_uint;
-const FcEndianBig: u32 = 0_u32;
-const FcEndianLittle: u32 = 1_u32;
+static FcEndianBig: u32 = 0_u32;
+static FcEndianLittle: u32 = 1_u32;
 
 type struct__FcConfig = c_void;
 
