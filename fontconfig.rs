@@ -181,141 +181,141 @@ extern mod bindgen {
 
 fn FcBlanksCreate() -> *FcBlanks;
 
-fn FcBlanksDestroy(++b: *FcBlanks);
+fn FcBlanksDestroy(b: *FcBlanks);
 
-fn FcBlanksAdd(++b: *FcBlanks, ++ucs4: FcChar32) -> FcBool;
+fn FcBlanksAdd(b: *FcBlanks, ucs4: FcChar32) -> FcBool;
 
-fn FcBlanksIsMember(++b: *FcBlanks, ++ucs4: FcChar32) -> FcBool;
+fn FcBlanksIsMember(b: *FcBlanks, ucs4: FcChar32) -> FcBool;
 
-fn FcCacheDir(++c: *FcCache) -> *FcChar8;
+fn FcCacheDir(c: *FcCache) -> *FcChar8;
 
-fn FcCacheCopySet(++c: *FcCache) -> *FcFontSet;
+fn FcCacheCopySet(c: *FcCache) -> *FcFontSet;
 
-fn FcCacheSubdir(++c: *FcCache, ++i: c_int) -> *FcChar8;
+fn FcCacheSubdir(c: *FcCache, i: c_int) -> *FcChar8;
 
-fn FcCacheNumSubdir(++c: *FcCache) -> c_int;
+fn FcCacheNumSubdir(c: *FcCache) -> c_int;
 
-fn FcCacheNumFont(++c: *FcCache) -> c_int;
+fn FcCacheNumFont(c: *FcCache) -> c_int;
 
-fn FcDirCacheUnlink(++dir: *FcChar8, ++config: *FcConfig) -> FcBool;
+fn FcDirCacheUnlink(dir: *FcChar8, config: *FcConfig) -> FcBool;
 
-fn FcDirCacheValid(++cache_file: *FcChar8) -> FcBool;
+fn FcDirCacheValid(cache_file: *FcChar8) -> FcBool;
 
 fn FcConfigHome() -> *FcChar8;
 
-fn FcConfigEnableHome(++enable: FcBool) -> FcBool;
+fn FcConfigEnableHome(enable: FcBool) -> FcBool;
 
-fn FcConfigFilename(++url: *FcChar8) -> *FcChar8;
+fn FcConfigFilename(url: *FcChar8) -> *FcChar8;
 
 fn FcConfigCreate() -> *FcConfig;
 
-fn FcConfigReference(++config: *FcConfig) -> *FcConfig;
+fn FcConfigReference(config: *FcConfig) -> *FcConfig;
 
-fn FcConfigDestroy(++config: *FcConfig);
+fn FcConfigDestroy(config: *FcConfig);
 
-fn FcConfigSetCurrent(++config: *FcConfig) -> FcBool;
+fn FcConfigSetCurrent(config: *FcConfig) -> FcBool;
 
 fn FcConfigGetCurrent() -> *FcConfig;
 
-fn FcConfigUptoDate(++config: *FcConfig) -> FcBool;
+fn FcConfigUptoDate(config: *FcConfig) -> FcBool;
 
-fn FcConfigBuildFonts(++config: *FcConfig) -> FcBool;
+fn FcConfigBuildFonts(config: *FcConfig) -> FcBool;
 
-fn FcConfigGetFontDirs(++config: *FcConfig) -> *FcStrList;
+fn FcConfigGetFontDirs(config: *FcConfig) -> *FcStrList;
 
-fn FcConfigGetConfigDirs(++config: *FcConfig) -> *FcStrList;
+fn FcConfigGetConfigDirs(config: *FcConfig) -> *FcStrList;
 
-fn FcConfigGetConfigFiles(++config: *FcConfig) -> *FcStrList;
+fn FcConfigGetConfigFiles(config: *FcConfig) -> *FcStrList;
 
-fn FcConfigGetCache(++config: *FcConfig) -> *FcChar8;
+fn FcConfigGetCache(config: *FcConfig) -> *FcChar8;
 
-fn FcConfigGetBlanks(++config: *FcConfig) -> *FcBlanks;
+fn FcConfigGetBlanks(config: *FcConfig) -> *FcBlanks;
 
-fn FcConfigGetCacheDirs(++config: *FcConfig) -> *FcStrList;
+fn FcConfigGetCacheDirs(config: *FcConfig) -> *FcStrList;
 
-fn FcConfigGetRescanInterval(++config: *FcConfig) -> c_int;
+fn FcConfigGetRescanInterval(config: *FcConfig) -> c_int;
 
-fn FcConfigSetRescanInterval(++config: *FcConfig, ++rescanInterval: c_int) -> FcBool;
+fn FcConfigSetRescanInterval(config: *FcConfig, rescanInterval: c_int) -> FcBool;
 
-fn FcConfigGetFonts(++config: *FcConfig, ++set: FcSetName) -> *FcFontSet;
+fn FcConfigGetFonts(config: *FcConfig, set: FcSetName) -> *FcFontSet;
 
-fn FcConfigAppFontAddFile(++config: *FcConfig, ++file: *FcChar8) -> FcBool;
+fn FcConfigAppFontAddFile(config: *FcConfig, file: *FcChar8) -> FcBool;
 
-fn FcConfigAppFontAddDir(++config: *FcConfig, ++dir: *FcChar8) -> FcBool;
+fn FcConfigAppFontAddDir(config: *FcConfig, dir: *FcChar8) -> FcBool;
 
-fn FcConfigAppFontClear(++config: *FcConfig);
+fn FcConfigAppFontClear(config: *FcConfig);
 
-fn FcConfigSubstituteWithPat(++config: *FcConfig, ++p: *FcPattern, ++p_pat: *FcPattern, ++kind: FcMatchKind) -> FcBool;
+fn FcConfigSubstituteWithPat(config: *FcConfig, p: *FcPattern, p_pat: *FcPattern, kind: FcMatchKind) -> FcBool;
 
-fn FcConfigSubstitute(++config: *FcConfig, ++p: *FcPattern, ++kind: FcMatchKind) -> FcBool;
+fn FcConfigSubstitute(config: *FcConfig, p: *FcPattern, kind: FcMatchKind) -> FcBool;
 
 fn FcCharSetCreate() -> *FcCharSet;
 
 fn FcCharSetNew() -> *FcCharSet;
 
-fn FcCharSetDestroy(++fcs: *FcCharSet);
+fn FcCharSetDestroy(fcs: *FcCharSet);
 
-fn FcCharSetAddChar(++fcs: *FcCharSet, ++ucs4: FcChar32) -> FcBool;
+fn FcCharSetAddChar(fcs: *FcCharSet, ucs4: FcChar32) -> FcBool;
 
-fn FcCharSetCopy(++src: *FcCharSet) -> *FcCharSet;
+fn FcCharSetCopy(src: *FcCharSet) -> *FcCharSet;
 
-fn FcCharSetEqual(++a: *FcCharSet, ++b: *FcCharSet) -> FcBool;
+fn FcCharSetEqual(a: *FcCharSet, b: *FcCharSet) -> FcBool;
 
-fn FcCharSetIntersect(++a: *FcCharSet, ++b: *FcCharSet) -> *FcCharSet;
+fn FcCharSetIntersect(a: *FcCharSet, b: *FcCharSet) -> *FcCharSet;
 
-fn FcCharSetUnion(++a: *FcCharSet, ++b: *FcCharSet) -> *FcCharSet;
+fn FcCharSetUnion(a: *FcCharSet, b: *FcCharSet) -> *FcCharSet;
 
-fn FcCharSetSubtract(++a: *FcCharSet, ++b: *FcCharSet) -> *FcCharSet;
+fn FcCharSetSubtract(a: *FcCharSet, b: *FcCharSet) -> *FcCharSet;
 
-fn FcCharSetMerge(++a: *FcCharSet, ++b: *FcCharSet, ++changed: *FcBool) -> FcBool;
+fn FcCharSetMerge(a: *FcCharSet, b: *FcCharSet, changed: *FcBool) -> FcBool;
 
-fn FcCharSetHasChar(++fcs: *FcCharSet, ++ucs4: FcChar32) -> FcBool;
+fn FcCharSetHasChar(fcs: *FcCharSet, ucs4: FcChar32) -> FcBool;
 
-fn FcCharSetCount(++a: *FcCharSet) -> FcChar32;
+fn FcCharSetCount(a: *FcCharSet) -> FcChar32;
 
-fn FcCharSetIntersectCount(++a: *FcCharSet, ++b: *FcCharSet) -> FcChar32;
+fn FcCharSetIntersectCount(a: *FcCharSet, b: *FcCharSet) -> FcChar32;
 
-fn FcCharSetSubtractCount(++a: *FcCharSet, ++b: *FcCharSet) -> FcChar32;
+fn FcCharSetSubtractCount(a: *FcCharSet, b: *FcCharSet) -> FcChar32;
 
-fn FcCharSetIsSubset(++a: *FcCharSet, ++b: *FcCharSet) -> FcBool;
+fn FcCharSetIsSubset(a: *FcCharSet, b: *FcCharSet) -> FcBool;
 
-fn FcCharSetFirstPage(++a: *FcCharSet, ++map: *FcChar32, ++next: *FcChar32) -> FcChar32;
+fn FcCharSetFirstPage(a: *FcCharSet, map: *FcChar32, next: *FcChar32) -> FcChar32;
 
-fn FcCharSetNextPage(++a: *FcCharSet, ++map: *FcChar32, ++next: *FcChar32) -> FcChar32;
+fn FcCharSetNextPage(a: *FcCharSet, map: *FcChar32, next: *FcChar32) -> FcChar32;
 
-fn FcCharSetCoverage(++a: *FcCharSet, ++page: FcChar32, ++result: *FcChar32) -> FcChar32;
+fn FcCharSetCoverage(a: *FcCharSet, page: FcChar32, result: *FcChar32) -> FcChar32;
 
-fn FcValuePrint(++v: FcValue);
+fn FcValuePrint(v: FcValue);
 
-fn FcPatternPrint(++p: *FcPattern);
+fn FcPatternPrint(p: *FcPattern);
 
-fn FcFontSetPrint(++s: *FcFontSet);
+fn FcFontSetPrint(s: *FcFontSet);
 
-fn FcDefaultSubstitute(++pattern: *FcPattern);
+fn FcDefaultSubstitute(pattern: *FcPattern);
 
-fn FcFileIsDir(++file: *FcChar8) -> FcBool;
+fn FcFileIsDir(file: *FcChar8) -> FcBool;
 
-fn FcFileScan(++set: *FcFontSet, ++dirs: *FcStrSet, ++cache: *FcFileCache, ++blanks: *FcBlanks, ++file: *FcChar8, ++force: FcBool) -> FcBool;
+fn FcFileScan(set: *FcFontSet, dirs: *FcStrSet, cache: *FcFileCache, blanks: *FcBlanks, file: *FcChar8, force: FcBool) -> FcBool;
 
-fn FcDirScan(++set: *FcFontSet, ++dirs: *FcStrSet, ++cache: *FcFileCache, ++blanks: *FcBlanks, ++dir: *FcChar8, ++force: FcBool) -> FcBool;
+fn FcDirScan(set: *FcFontSet, dirs: *FcStrSet, cache: *FcFileCache, blanks: *FcBlanks, dir: *FcChar8, force: FcBool) -> FcBool;
 
-fn FcDirSave(++set: *FcFontSet, ++dirs: *FcStrSet, ++dir: *FcChar8) -> FcBool;
+fn FcDirSave(set: *FcFontSet, dirs: *FcStrSet, dir: *FcChar8) -> FcBool;
 
-fn FcDirCacheLoad(++dir: *FcChar8, ++config: *FcConfig, ++cache_file: **FcChar8) -> *FcCache;
+fn FcDirCacheLoad(dir: *FcChar8, config: *FcConfig, cache_file: **FcChar8) -> *FcCache;
 
-fn FcDirCacheRead(++dir: *FcChar8, ++force: FcBool, ++config: *FcConfig) -> *FcCache;
+fn FcDirCacheRead(dir: *FcChar8, force: FcBool, config: *FcConfig) -> *FcCache;
 
-//fn FcDirCacheLoadFile(++cache_file: *FcChar8, ++file_stat: *struct_stat) -> *FcCache;
+//fn FcDirCacheLoadFile(cache_file: *FcChar8, file_stat: *struct_stat) -> *FcCache;
 
-fn FcDirCacheUnload(++cache: *FcCache);
+fn FcDirCacheUnload(cache: *FcCache);
 
-fn FcFreeTypeQuery(++file: *FcChar8, ++id: c_int, ++blanks: *FcBlanks, ++count: *c_int) -> *FcPattern;
+fn FcFreeTypeQuery(file: *FcChar8, id: c_int, blanks: *FcBlanks, count: *c_int) -> *FcPattern;
 
 fn FcFontSetCreate() -> *FcFontSet;
 
-fn FcFontSetDestroy(++s: *FcFontSet);
+fn FcFontSetDestroy(s: *FcFontSet);
 
-fn FcFontSetAdd(++s: *FcFontSet, ++font: *FcPattern) -> FcBool;
+fn FcFontSetAdd(s: *FcFontSet, font: *FcPattern) -> FcBool;
 
 fn FcInitLoadConfig() -> *FcConfig;
 
@@ -333,218 +333,218 @@ fn FcInitBringUptoDate() -> FcBool;
 
 fn FcGetLangs() -> *FcStrSet;
 
-fn FcLangGetCharSet(++lang: *FcChar8) -> *FcCharSet;
+fn FcLangGetCharSet(lang: *FcChar8) -> *FcCharSet;
 
 fn FcLangSetCreate() -> *FcLangSet;
 
-fn FcLangSetDestroy(++ls: *FcLangSet);
+fn FcLangSetDestroy(ls: *FcLangSet);
 
-fn FcLangSetCopy(++ls: *FcLangSet) -> *FcLangSet;
+fn FcLangSetCopy(ls: *FcLangSet) -> *FcLangSet;
 
-fn FcLangSetAdd(++ls: *FcLangSet, ++lang: *FcChar8) -> FcBool;
+fn FcLangSetAdd(ls: *FcLangSet, lang: *FcChar8) -> FcBool;
 
-fn FcLangSetHasLang(++ls: *FcLangSet, ++lang: *FcChar8) -> FcLangResult;
+fn FcLangSetHasLang(ls: *FcLangSet, lang: *FcChar8) -> FcLangResult;
 
-fn FcLangSetCompare(++lsa: *FcLangSet, ++lsb: *FcLangSet) -> FcLangResult;
+fn FcLangSetCompare(lsa: *FcLangSet, lsb: *FcLangSet) -> FcLangResult;
 
-fn FcLangSetContains(++lsa: *FcLangSet, ++lsb: *FcLangSet) -> FcBool;
+fn FcLangSetContains(lsa: *FcLangSet, lsb: *FcLangSet) -> FcBool;
 
-fn FcLangSetEqual(++lsa: *FcLangSet, ++lsb: *FcLangSet) -> FcBool;
+fn FcLangSetEqual(lsa: *FcLangSet, lsb: *FcLangSet) -> FcBool;
 
-fn FcLangSetHash(++ls: *FcLangSet) -> FcChar32;
+fn FcLangSetHash(ls: *FcLangSet) -> FcChar32;
 
-fn FcLangSetGetLangs(++ls: *FcLangSet) -> *FcStrSet;
+fn FcLangSetGetLangs(ls: *FcLangSet) -> *FcStrSet;
 
 fn FcObjectSetCreate() -> *FcObjectSet;
 
-fn FcObjectSetAdd(++os: *FcObjectSet, ++object: *c_char) -> FcBool;
+fn FcObjectSetAdd(os: *FcObjectSet, object: *c_char) -> FcBool;
 
-fn FcObjectSetDestroy(++os: *FcObjectSet);
+fn FcObjectSetDestroy(os: *FcObjectSet);
 
-//fn FcObjectSetVaBuild(++first: *c_char, ++va: *__va_list_tag) -> *FcObjectSet;
+//fn FcObjectSetVaBuild(first: *c_char, va: *__va_list_tag) -> *FcObjectSet;
 
-fn FcObjectSetBuild(++first: *c_char/* FIXME: variadic function */) -> *FcObjectSet;
+fn FcObjectSetBuild(first: *c_char/* FIXME: variadic function */) -> *FcObjectSet;
 
-fn FcFontSetList(++config: *FcConfig, ++sets: **FcFontSet, ++nsets: c_int, ++p: *FcPattern, ++os: *FcObjectSet) -> *FcFontSet;
+fn FcFontSetList(config: *FcConfig, sets: **FcFontSet, nsets: c_int, p: *FcPattern, os: *FcObjectSet) -> *FcFontSet;
 
-fn FcFontList(++config: *FcConfig, ++p: *FcPattern, ++os: *FcObjectSet) -> *FcFontSet;
+fn FcFontList(config: *FcConfig, p: *FcPattern, os: *FcObjectSet) -> *FcFontSet;
 
-fn FcAtomicCreate(++file: *FcChar8) -> *FcAtomic;
+fn FcAtomicCreate(file: *FcChar8) -> *FcAtomic;
 
-fn FcAtomicLock(++atomic: *FcAtomic) -> FcBool;
+fn FcAtomicLock(atomic: *FcAtomic) -> FcBool;
 
-fn FcAtomicNewFile(++atomic: *FcAtomic) -> *FcChar8;
+fn FcAtomicNewFile(atomic: *FcAtomic) -> *FcChar8;
 
-fn FcAtomicOrigFile(++atomic: *FcAtomic) -> *FcChar8;
+fn FcAtomicOrigFile(atomic: *FcAtomic) -> *FcChar8;
 
-fn FcAtomicReplaceOrig(++atomic: *FcAtomic) -> FcBool;
+fn FcAtomicReplaceOrig(atomic: *FcAtomic) -> FcBool;
 
-fn FcAtomicDeleteNew(++atomic: *FcAtomic);
+fn FcAtomicDeleteNew(atomic: *FcAtomic);
 
-fn FcAtomicUnlock(++atomic: *FcAtomic);
+fn FcAtomicUnlock(atomic: *FcAtomic);
 
-fn FcAtomicDestroy(++atomic: *FcAtomic);
+fn FcAtomicDestroy(atomic: *FcAtomic);
 
-fn FcFontSetMatch(++config: *FcConfig, ++sets: **FcFontSet, ++nsets: c_int, ++p: *FcPattern, ++result: *FcResult) -> *FcPattern;
+fn FcFontSetMatch(config: *FcConfig, sets: **FcFontSet, nsets: c_int, p: *FcPattern, result: *FcResult) -> *FcPattern;
 
-fn FcFontMatch(++config: *FcConfig, ++p: *FcPattern, ++result: *FcResult) -> *FcPattern;
+fn FcFontMatch(config: *FcConfig, p: *FcPattern, result: *FcResult) -> *FcPattern;
 
-fn FcFontRenderPrepare(++config: *FcConfig, ++pat: *FcPattern, ++font: *FcPattern) -> *FcPattern;
+fn FcFontRenderPrepare(config: *FcConfig, pat: *FcPattern, font: *FcPattern) -> *FcPattern;
 
-fn FcFontSetSort(++config: *FcConfig, ++sets: **FcFontSet, ++nsets: c_int, ++p: *FcPattern, ++trim: FcBool, ++csp: **FcCharSet, ++result: *FcResult) -> *FcFontSet;
+fn FcFontSetSort(config: *FcConfig, sets: **FcFontSet, nsets: c_int, p: *FcPattern, trim: FcBool, csp: **FcCharSet, result: *FcResult) -> *FcFontSet;
 
-fn FcFontSort(++config: *FcConfig, ++p: *FcPattern, ++trim: FcBool, ++csp: **FcCharSet, ++result: *FcResult) -> *FcFontSet;
+fn FcFontSort(config: *FcConfig, p: *FcPattern, trim: FcBool, csp: **FcCharSet, result: *FcResult) -> *FcFontSet;
 
-fn FcFontSetSortDestroy(++fs: *FcFontSet);
+fn FcFontSetSortDestroy(fs: *FcFontSet);
 
-fn FcMatrixCopy(++mat: *FcMatrix) -> *FcMatrix;
+fn FcMatrixCopy(mat: *FcMatrix) -> *FcMatrix;
 
-fn FcMatrixEqual(++mat1: *FcMatrix, ++mat2: *FcMatrix) -> FcBool;
+fn FcMatrixEqual(mat1: *FcMatrix, mat2: *FcMatrix) -> FcBool;
 
-fn FcMatrixMultiply(++result: *FcMatrix, ++a: *FcMatrix, ++b: *FcMatrix);
+fn FcMatrixMultiply(result: *FcMatrix, a: *FcMatrix, b: *FcMatrix);
 
-fn FcMatrixRotate(++m: *FcMatrix, ++c: c_double, ++s: c_double);
+fn FcMatrixRotate(m: *FcMatrix, c: c_double, s: c_double);
 
-fn FcMatrixScale(++m: *FcMatrix, ++sx: c_double, ++sy: c_double);
+fn FcMatrixScale(m: *FcMatrix, sx: c_double, sy: c_double);
 
-fn FcMatrixShear(++m: *FcMatrix, ++sh: c_double, ++sv: c_double);
+fn FcMatrixShear(m: *FcMatrix, sh: c_double, sv: c_double);
 
-fn FcNameRegisterObjectTypes(++types: *FcObjectType, ++ntype: c_int) -> FcBool;
+fn FcNameRegisterObjectTypes(types: *FcObjectType, ntype: c_int) -> FcBool;
 
-fn FcNameUnregisterObjectTypes(++types: *FcObjectType, ++ntype: c_int) -> FcBool;
+fn FcNameUnregisterObjectTypes(types: *FcObjectType, ntype: c_int) -> FcBool;
 
-fn FcNameGetObjectType(++object: *c_char) -> *FcObjectType;
+fn FcNameGetObjectType(object: *c_char) -> *FcObjectType;
 
-fn FcNameRegisterConstants(++consts: *FcConstant, ++nconsts: c_int) -> FcBool;
+fn FcNameRegisterConstants(consts: *FcConstant, nconsts: c_int) -> FcBool;
 
-fn FcNameUnregisterConstants(++consts: *FcConstant, ++nconsts: c_int) -> FcBool;
+fn FcNameUnregisterConstants(consts: *FcConstant, nconsts: c_int) -> FcBool;
 
-fn FcNameGetConstant(++string: *FcChar8) -> *FcConstant;
+fn FcNameGetConstant(string: *FcChar8) -> *FcConstant;
 
-fn FcNameConstant(++string: *FcChar8, ++result: *c_int) -> FcBool;
+fn FcNameConstant(string: *FcChar8, result: *c_int) -> FcBool;
 
-fn FcNameParse(++name: *FcChar8) -> *FcPattern;
+fn FcNameParse(name: *FcChar8) -> *FcPattern;
 
-fn FcNameUnparse(++pat: *FcPattern) -> *FcChar8;
+fn FcNameUnparse(pat: *FcPattern) -> *FcChar8;
 
 fn FcPatternCreate() -> *FcPattern;
 
-fn FcPatternDuplicate(++p: *FcPattern) -> *FcPattern;
+fn FcPatternDuplicate(p: *FcPattern) -> *FcPattern;
 
-fn FcPatternReference(++p: *FcPattern);
+fn FcPatternReference(p: *FcPattern);
 
-fn FcPatternFilter(++p: *FcPattern, ++os: *FcObjectSet) -> *FcPattern;
+fn FcPatternFilter(p: *FcPattern, os: *FcObjectSet) -> *FcPattern;
 
-fn FcValueDestroy(++v: FcValue);
+fn FcValueDestroy(v: FcValue);
 
-fn FcValueEqual(++va: FcValue, ++vb: FcValue) -> FcBool;
+fn FcValueEqual(va: FcValue, vb: FcValue) -> FcBool;
 
-fn FcValueSave(++v: FcValue) -> FcValue;
+fn FcValueSave(v: FcValue) -> FcValue;
 
-fn FcPatternDestroy(++p: *FcPattern);
+fn FcPatternDestroy(p: *FcPattern);
 
-fn FcPatternEqual(++pa: *FcPattern, ++pb: *FcPattern) -> FcBool;
+fn FcPatternEqual(pa: *FcPattern, pb: *FcPattern) -> FcBool;
 
-fn FcPatternEqualSubset(++pa: *FcPattern, ++pb: *FcPattern, ++os: *FcObjectSet) -> FcBool;
+fn FcPatternEqualSubset(pa: *FcPattern, pb: *FcPattern, os: *FcObjectSet) -> FcBool;
 
-fn FcPatternHash(++p: *FcPattern) -> FcChar32;
+fn FcPatternHash(p: *FcPattern) -> FcChar32;
 
-fn FcPatternAdd(++p: *FcPattern, ++object: *c_char, ++value: FcValue, ++append: FcBool) -> FcBool;
+fn FcPatternAdd(p: *FcPattern, object: *c_char, value: FcValue, append: FcBool) -> FcBool;
 
-fn FcPatternAddWeak(++p: *FcPattern, ++object: *c_char, ++value: FcValue, ++append: FcBool) -> FcBool;
+fn FcPatternAddWeak(p: *FcPattern, object: *c_char, value: FcValue, append: FcBool) -> FcBool;
 
-fn FcPatternGet(++p: *FcPattern, ++object: *c_char, ++id: c_int, ++v: *FcValue) -> FcResult;
+fn FcPatternGet(p: *FcPattern, object: *c_char, id: c_int, v: *FcValue) -> FcResult;
 
-fn FcPatternDel(++p: *FcPattern, ++object: *c_char) -> FcBool;
+fn FcPatternDel(p: *FcPattern, object: *c_char) -> FcBool;
 
-fn FcPatternRemove(++p: *FcPattern, ++object: *c_char, ++id: c_int) -> FcBool;
+fn FcPatternRemove(p: *FcPattern, object: *c_char, id: c_int) -> FcBool;
 
-fn FcPatternAddInteger(++p: *FcPattern, ++object: *c_char, ++i: c_int) -> FcBool;
+fn FcPatternAddInteger(p: *FcPattern, object: *c_char, i: c_int) -> FcBool;
 
-fn FcPatternAddDouble(++p: *FcPattern, ++object: *c_char, ++d: c_double) -> FcBool;
+fn FcPatternAddDouble(p: *FcPattern, object: *c_char, d: c_double) -> FcBool;
 
-fn FcPatternAddString(++p: *FcPattern, ++object: *c_char, ++s: *FcChar8) -> FcBool;
+fn FcPatternAddString(p: *FcPattern, object: *c_char, s: *FcChar8) -> FcBool;
 
-fn FcPatternAddMatrix(++p: *FcPattern, ++object: *c_char, ++s: *FcMatrix) -> FcBool;
+fn FcPatternAddMatrix(p: *FcPattern, object: *c_char, s: *FcMatrix) -> FcBool;
 
-fn FcPatternAddCharSet(++p: *FcPattern, ++object: *c_char, ++c: *FcCharSet) -> FcBool;
+fn FcPatternAddCharSet(p: *FcPattern, object: *c_char, c: *FcCharSet) -> FcBool;
 
-fn FcPatternAddBool(++p: *FcPattern, ++object: *c_char, ++b: FcBool) -> FcBool;
+fn FcPatternAddBool(p: *FcPattern, object: *c_char, b: FcBool) -> FcBool;
 
-fn FcPatternAddLangSet(++p: *FcPattern, ++object: *c_char, ++ls: *FcLangSet) -> FcBool;
+fn FcPatternAddLangSet(p: *FcPattern, object: *c_char, ls: *FcLangSet) -> FcBool;
 
-fn FcPatternGetInteger(++p: *FcPattern, ++object: *c_char, ++n: c_int, ++i: *c_int) -> FcResult;
+fn FcPatternGetInteger(p: *FcPattern, object: *c_char, n: c_int, i: *c_int) -> FcResult;
 
-fn FcPatternGetDouble(++p: *FcPattern, ++object: *c_char, ++n: c_int, ++d: *c_double) -> FcResult;
+fn FcPatternGetDouble(p: *FcPattern, object: *c_char, n: c_int, d: *c_double) -> FcResult;
 
-fn FcPatternGetString(++p: *FcPattern, ++object: *c_char, ++n: c_int, ++s: **FcChar8) -> FcResult;
+fn FcPatternGetString(p: *FcPattern, object: *c_char, n: c_int, s: **FcChar8) -> FcResult;
 
-fn FcPatternGetMatrix(++p: *FcPattern, ++object: *c_char, ++n: c_int, ++s: **FcMatrix) -> FcResult;
+fn FcPatternGetMatrix(p: *FcPattern, object: *c_char, n: c_int, s: **FcMatrix) -> FcResult;
 
-fn FcPatternGetCharSet(++p: *FcPattern, ++object: *c_char, ++n: c_int, ++c: **FcCharSet) -> FcResult;
+fn FcPatternGetCharSet(p: *FcPattern, object: *c_char, n: c_int, c: **FcCharSet) -> FcResult;
 
-fn FcPatternGetBool(++p: *FcPattern, ++object: *c_char, ++n: c_int, ++b: *FcBool) -> FcResult;
+fn FcPatternGetBool(p: *FcPattern, object: *c_char, n: c_int, b: *FcBool) -> FcResult;
 
-fn FcPatternGetLangSet(++p: *FcPattern, ++object: *c_char, ++n: c_int, ++ls: **FcLangSet) -> FcResult;
+fn FcPatternGetLangSet(p: *FcPattern, object: *c_char, n: c_int, ls: **FcLangSet) -> FcResult;
 
-//fn FcPatternVaBuild(++p: *FcPattern, ++va: *__va_list_tag) -> *FcPattern;
+//fn FcPatternVaBuild(p: *FcPattern, va: *__va_list_tag) -> *FcPattern;
 
-fn FcPatternBuild(++p: *FcPattern/* FIXME: variadic function */) -> *FcPattern;
+fn FcPatternBuild(p: *FcPattern/* FIXME: variadic function */) -> *FcPattern;
 
-fn FcPatternFormat(++pat: *FcPattern, ++format: *FcChar8) -> *FcChar8;
+fn FcPatternFormat(pat: *FcPattern, format: *FcChar8) -> *FcChar8;
 
-fn FcStrCopy(++s: *FcChar8) -> *FcChar8;
+fn FcStrCopy(s: *FcChar8) -> *FcChar8;
 
-fn FcStrCopyFilename(++s: *FcChar8) -> *FcChar8;
+fn FcStrCopyFilename(s: *FcChar8) -> *FcChar8;
 
-fn FcStrPlus(++s1: *FcChar8, ++s2: *FcChar8) -> *FcChar8;
+fn FcStrPlus(s1: *FcChar8, s2: *FcChar8) -> *FcChar8;
 
-fn FcStrFree(++s: *FcChar8);
+fn FcStrFree(s: *FcChar8);
 
-fn FcStrDowncase(++s: *FcChar8) -> *FcChar8;
+fn FcStrDowncase(s: *FcChar8) -> *FcChar8;
 
-fn FcStrCmpIgnoreCase(++s1: *FcChar8, ++s2: *FcChar8) -> c_int;
+fn FcStrCmpIgnoreCase(s1: *FcChar8, s2: *FcChar8) -> c_int;
 
-fn FcStrCmp(++s1: *FcChar8, ++s2: *FcChar8) -> c_int;
+fn FcStrCmp(s1: *FcChar8, s2: *FcChar8) -> c_int;
 
-fn FcStrStrIgnoreCase(++s1: *FcChar8, ++s2: *FcChar8) -> *FcChar8;
+fn FcStrStrIgnoreCase(s1: *FcChar8, s2: *FcChar8) -> *FcChar8;
 
-fn FcStrStr(++s1: *FcChar8, ++s2: *FcChar8) -> *FcChar8;
+fn FcStrStr(s1: *FcChar8, s2: *FcChar8) -> *FcChar8;
 
-fn FcUtf8ToUcs4(++src_orig: *FcChar8, ++dst: *FcChar32, ++len: c_int) -> c_int;
+fn FcUtf8ToUcs4(src_orig: *FcChar8, dst: *FcChar32, len: c_int) -> c_int;
 
-fn FcUtf8Len(++string: *FcChar8, ++len: c_int, ++nchar: *c_int, ++wchar: *c_int) -> FcBool;
+fn FcUtf8Len(string: *FcChar8, len: c_int, nchar: *c_int, wchar: *c_int) -> FcBool;
 
-fn FcUcs4ToUtf8(++ucs4: FcChar32, ++dest: *FcChar8) -> c_int;
+fn FcUcs4ToUtf8(ucs4: FcChar32, dest: *FcChar8) -> c_int;
 
-fn FcUtf16ToUcs4(++src_orig: *FcChar8, ++endian: FcEndian, ++dst: *FcChar32, ++len: c_int) -> c_int;
+fn FcUtf16ToUcs4(src_orig: *FcChar8, endian: FcEndian, dst: *FcChar32, len: c_int) -> c_int;
 
-fn FcUtf16Len(++string: *FcChar8, ++endian: FcEndian, ++len: c_int, ++nchar: *c_int, ++wchar: *c_int) -> FcBool;
+fn FcUtf16Len(string: *FcChar8, endian: FcEndian, len: c_int, nchar: *c_int, wchar: *c_int) -> FcBool;
 
-fn FcStrDirname(++file: *FcChar8) -> *FcChar8;
+fn FcStrDirname(file: *FcChar8) -> *FcChar8;
 
-fn FcStrBasename(++file: *FcChar8) -> *FcChar8;
+fn FcStrBasename(file: *FcChar8) -> *FcChar8;
 
 fn FcStrSetCreate() -> *FcStrSet;
 
-fn FcStrSetMember(++set: *FcStrSet, ++s: *FcChar8) -> FcBool;
+fn FcStrSetMember(set: *FcStrSet, s: *FcChar8) -> FcBool;
 
-fn FcStrSetEqual(++sa: *FcStrSet, ++sb: *FcStrSet) -> FcBool;
+fn FcStrSetEqual(sa: *FcStrSet, sb: *FcStrSet) -> FcBool;
 
-fn FcStrSetAdd(++set: *FcStrSet, ++s: *FcChar8) -> FcBool;
+fn FcStrSetAdd(set: *FcStrSet, s: *FcChar8) -> FcBool;
 
-fn FcStrSetAddFilename(++set: *FcStrSet, ++s: *FcChar8) -> FcBool;
+fn FcStrSetAddFilename(set: *FcStrSet, s: *FcChar8) -> FcBool;
 
-fn FcStrSetDel(++set: *FcStrSet, ++s: *FcChar8) -> FcBool;
+fn FcStrSetDel(set: *FcStrSet, s: *FcChar8) -> FcBool;
 
-fn FcStrSetDestroy(++set: *FcStrSet);
+fn FcStrSetDestroy(set: *FcStrSet);
 
-fn FcStrListCreate(++set: *FcStrSet) -> *FcStrList;
+fn FcStrListCreate(set: *FcStrSet) -> *FcStrList;
 
-fn FcStrListNext(++list: *FcStrList) -> *FcChar8;
+fn FcStrListNext(list: *FcStrList) -> *FcChar8;
 
-fn FcStrListDone(++list: *FcStrList);
+fn FcStrListDone(list: *FcStrList);
 
-fn FcConfigParseAndLoad(++config: *FcConfig, ++file: *FcChar8, ++complain: FcBool) -> FcBool;
+fn FcConfigParseAndLoad(config: *FcConfig, file: *FcChar8, complain: FcBool) -> FcBool;
 
 }
