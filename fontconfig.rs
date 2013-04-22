@@ -30,6 +30,28 @@ static FcTypeLangSet: u32 = 8_u32;
 
 type FcType = enum__FcType;
 
+static FC_WEIGHT_THIN: c_int = 0;
+static FC_WEIGHT_EXTRALIGHT: c_int = 40;
+static FC_WEIGHT_ULTRALIGHT: c_int = FC_WEIGHT_EXTRALIGHT;
+static FC_WEIGHT_LIGHT: c_int = 50;
+static FC_WEIGHT_BOOK: c_int = 75;
+static FC_WEIGHT_REGULAR: c_int = 80;
+static FC_WEIGHT_NORMAL: c_int = FC_WEIGHT_REGULAR;
+static FC_WEIGHT_MEDIUM: c_int = 100;
+static FC_WEIGHT_DEMIBOLD: c_int = 180;
+static FC_WEIGHT_SEMIBOLD: c_int = FC_WEIGHT_DEMIBOLD;
+static FC_WEIGHT_BOLD: c_int = 200;
+static FC_WEIGHT_EXTRABOLD: c_int = 205;
+static FC_WEIGHT_ULTRABOLD: c_int = FC_WEIGHT_EXTRABOLD;
+static FC_WEIGHT_BLACK: c_int = 210;
+static FC_WEIGHT_HEAVY: c_int = FC_WEIGHT_BLACK;
+static FC_WEIGHT_EXTRABLACK: c_int = 215;
+static FC_WEIGHT_ULTRABLACK: c_int = FC_WEIGHT_EXTRABLACK;
+
+static FC_SLANT_ROMAN: c_int = 0;
+static FC_SLANT_ITALIC: c_int = 100;
+static FC_SLANT_OBLIQUE: c_int = 110;
+
 struct struct__FcMatrix {
     xx: c_double,
     xy: c_double,
