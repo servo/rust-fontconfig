@@ -24,7 +24,7 @@ librustfontconfig.dummy: fontconfig.rc $(RUST_SRC)
 	touch $@
 
 fontconfig-test: fontconfig.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< --out-dir . --test
+	$(RUSTC) $(RUSTFLAGS) $< -o $@ --test
 
 .PHONY: check
 check: fontconfig-test
