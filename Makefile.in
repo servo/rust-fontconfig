@@ -20,11 +20,11 @@ all:	librustfontconfig.dummy
 	$(CC) $< -o $@ -c $(CFLAGS)
 
 librustfontconfig.dummy: fontconfig.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< -o $@
+	$(RUSTC) $(RUSTFLAGS) $< --out-dir .
 	touch $@
 
 fontconfig-test: fontconfig.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< -o $@ --test
+	$(RUSTC) $(RUSTFLAGS) $< --out-dir . --test
 
 .PHONY: check
 check: fontconfig-test
