@@ -20,7 +20,7 @@ all:	librustfontconfig.dummy
 	$(CC) $< -o $@ -c $(CFLAGS)
 
 librustfontconfig.dummy: fontconfig.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< --out-dir .
+	$(RUSTC) $(RUSTFLAGS) $< --out-dir . --lib
 	touch $@
 
 fontconfig-test: fontconfig.rc $(RUST_SRC)
