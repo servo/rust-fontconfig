@@ -7,8 +7,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#[link(name = "fontconfig",
-       vers = "0.1")];
+#[crate_id = "github.com/mozilla-servo/rust-fontconfig#fontconfig:0.1"];
 #[crate_type = "lib"];
 
 #[feature(globs)];
@@ -16,9 +15,3 @@
 extern mod std;
 
 pub mod fontconfig;
-
-#[nolink]
-#[cfg(target_os = "linux")]
-#[cfg(target_os = "android")]
-#[link_args = "-lfontconfig"]
-extern { }
