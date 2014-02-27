@@ -9,6 +9,8 @@ RUSTFLAGS ?=
 
 ifeq ($(CFG_OSTYPE),linux-androideabi)
 RUSTFLAGS += -L./../../android/fontconfig/src/.libs
+else ifeq ($(CFG_OSTYPE),unknown-linux-gnu)
+RUSTFLAGS += -L./../../linux/fontconfig/src/.libs
 endif
 
 RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
