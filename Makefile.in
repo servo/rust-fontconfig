@@ -22,7 +22,7 @@ all:	librustfontconfig.dummy
 	$(CC) $< -o $@ -c $(CFLAGS)
 
 librustfontconfig.dummy: fontconfig.rc $(RUST_SRC)
-	$(RUSTC) $(RUSTFLAGS) $< --out-dir . --crate-type=lib
+	$(RUSTC) $(RUSTFLAGS) $< --out-dir .
 	touch $@
 
 fontconfig-test: fontconfig.rc $(RUST_SRC)
