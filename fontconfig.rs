@@ -9,7 +9,7 @@
 
 #[allow(non_uppercase_statics)];
 
-use std::libc::*;
+use libc::*;
 
 pub type FcChar8 = c_uchar;
 pub type FcChar16 = c_ushort;
