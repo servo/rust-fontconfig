@@ -52,10 +52,10 @@ pub static FC_SLANT_ITALIC: c_int = 100;
 pub static FC_SLANT_OBLIQUE: c_int = 110;
 
 pub struct struct__FcMatrix {
-    xx: c_double,
-    xy: c_double,
-    yx: c_double,
-    yy: c_double,
+    pub xx: c_double,
+    pub xy: c_double,
+    pub yx: c_double,
+    pub yy: c_double,
 }
 
 pub type FcMatrix = struct__FcMatrix;
@@ -65,16 +65,16 @@ pub type struct__FcCharSet = c_void;
 pub type FcCharSet = struct__FcCharSet;
 
 pub struct struct__FcObjectType {
-    object: *c_char,
-    _type: FcType,
+    pub object: *c_char,
+    pub _type: FcType,
 }
 
 pub type FcObjectType = struct__FcObjectType;
 
 pub struct struct__FcConstant {
-    name: *FcChar8,
-    object: *c_char,
-    value: c_int,
+    pub name: *FcChar8,
+    pub object: *c_char,
+    pub value: c_int,
 }
 
 pub type FcConstant = struct__FcConstant;
@@ -97,24 +97,24 @@ pub type struct__FcLangSet = c_void;
 pub type FcLangSet = struct__FcLangSet;
 
 pub struct struct__FcValue {
-    _type: FcType,
-    u: union_unnamed1,
+    pub _type: FcType,
+    pub u: union_unnamed1,
 }
 
 pub type FcValue = struct__FcValue;
 
 pub struct struct__FcFontSet {
-    nfont: c_int,
-    sfont: c_int,
-    fonts: **FcPattern,
+    pub nfont: c_int,
+    pub sfont: c_int,
+    pub fonts: **FcPattern,
 }
 
 pub type FcFontSet = struct__FcFontSet;
 
 pub struct struct__FcObjectSet {
-    nobject: c_int,
-    sobject: c_int,
-    objects: **c_char,
+    pub nobject: c_int,
+    pub sobject: c_int,
+    pub objects: **c_char,
 }
 
 pub type FcObjectSet = struct__FcObjectSet;
