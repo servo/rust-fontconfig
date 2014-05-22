@@ -6,6 +6,7 @@ CXXFLAGS ?=
 AR ?= ar
 RUSTC ?= rustc
 RUSTFLAGS ?=
+EXT_DEPS ?=
 
 ifeq ($(CFG_OSTYPE),linux-androideabi)
 RUSTFLAGS += -L./../../android/fontconfig/src/.libs
@@ -21,7 +22,7 @@ all:	librustfontconfig.dummy
 %.o:	%.c
 	$(CC) $< -o $@ -c $(CFLAGS)
 
-librustfontconfig.dummy: fontconfig.rc $(RUST_SRC)
+librustfontconfig.dummy: fontconfig.rc $(RUST_SRC) $(EXT_DEPS)
 	$(RUSTC) $(RUSTFLAGS) $< --out-dir .
 	touch $@
 
