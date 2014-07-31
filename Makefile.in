@@ -17,13 +17,13 @@ endif
 RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
 
 .PHONY: all
-all:	librustfontconfig.dummy
+all:	libfontconfig-servo.dummy
 
 %.o:	%.c
 	$(CC) $< -o $@ -c $(CFLAGS)
 
-librustfontconfig.dummy: fontconfig.rc $(RUST_SRC) $(EXT_DEPS)
-	$(RUSTC) $(RUSTFLAGS) $< --out-dir .
+libfontconfig-servo.dummy: fontconfig.rc $(RUST_SRC) $(EXT_DEPS)
+	$(RUSTC) $(RUSTFLAGS) $< --out-dir . -C extra-filename=-servo
 	touch $@
 
 fontconfig-test: fontconfig.rc $(RUST_SRC)
