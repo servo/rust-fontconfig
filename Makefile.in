@@ -7,6 +7,9 @@ AR ?= ar
 RUSTC ?= rustc
 RUSTFLAGS ?=
 EXT_DEPS ?=
+RUSTDOC ?= rustdoc
+RUSTDOC_FLAGS ?=
+RUSTDOC_TARGET ?= doc
 
 ifeq ($(CFG_OSTYPE),linux-androideabi)
 RUSTFLAGS += -L./../../android/fontconfig/src/.libs
@@ -32,6 +35,12 @@ fontconfig-test: fontconfig.rc $(RUST_SRC)
 .PHONY: check
 check: fontconfig-test
 	./fontconfig-test
+
+.PHONY: doc
+doc: $(RUSTDOC_TARGET)/fontconfig/index.html
+
+$(RUSTDOC_TARGET)/fontconfig/index.html: fontconfig.rc $(RUST_SRC) $(EXT_DEPS)
+	$(RUSTDOC) $(RUSTDOC_FLAGS) $< -o $(RUSTDOC_TARGET)
 
 .PHONY: clean
 clean:
