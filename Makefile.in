@@ -17,7 +17,7 @@ else ifeq ($(CFG_OSTYPE),unknown-linux-gnu)
 RUSTFLAGS += -L./../../linux/fontconfig/src/.libs
 endif
 
-RUST_SRC=$(shell find $(VPATH)/. -type f -name '*.rs')
+RUST_SRC=$(shell find $(VPATH)/src -type f -name '*.rs')
 
 .PHONY: all
 all:	libfontconfig-servo.dummy
@@ -25,11 +25,11 @@ all:	libfontconfig-servo.dummy
 %.o:	%.c
 	$(CC) $< -o $@ -c $(CFLAGS)
 
-libfontconfig-servo.dummy: fontconfig.rc $(RUST_SRC) $(EXT_DEPS)
+libfontconfig-servo.dummy: src/lib.rs $(RUST_SRC) $(EXT_DEPS)
 	$(RUSTC) $(RUSTFLAGS) $< --out-dir . -C extra-filename=-servo
 	touch $@
 
-fontconfig-test: fontconfig.rc $(RUST_SRC)
+fontconfig-test: src/lib.rs $(RUST_SRC)
 	$(RUSTC) $(RUSTFLAGS) $< -o $@ --test
 
 .PHONY: check
@@ -39,7 +39,7 @@ check: fontconfig-test
 .PHONY: doc
 doc: $(RUSTDOC_TARGET)/fontconfig/index.html
 
-$(RUSTDOC_TARGET)/fontconfig/index.html: fontconfig.rc $(RUST_SRC) $(EXT_DEPS)
+$(RUSTDOC_TARGET)/fontconfig/index.html: src/lib.rs $(RUST_SRC) $(EXT_DEPS)
 	$(RUSTDOC) $(RUSTDOC_FLAGS) $< -o $(RUSTDOC_TARGET)
 
 .PHONY: clean
