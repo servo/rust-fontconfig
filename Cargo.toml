@@ -1,14 +1,7 @@
 [package]
-
 name = "fontconfig"
 version = "0.1.0"
 authors = ["The Servo Project Developers"]
 
-[lib]
-
-name = "fontconfig"
-crate-type = ["rlib"]
-
 [dependencies.fontconfig-sys]
-
-git = "https://github.com/servo/fontconfig"
+git = "https://github.com/servo/libfontconfig"
