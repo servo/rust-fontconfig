@@ -7,7 +7,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#![allow(non_uppercase_statics)]
+#![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
 
 use libc::*;
@@ -18,40 +18,41 @@ pub type FcChar32 = c_uint;
 pub type FcBool = c_int;
 
 pub type enum__FcType = c_uint;
-pub static FcTypeVoid: u32 = 0_u32;
-pub static FcTypeInteger: u32 = 1_u32;
-pub static FcTypeDouble: u32 = 2_u32;
-pub static FcTypeString: u32 = 3_u32;
-pub static FcTypeBool: u32 = 4_u32;
-pub static FcTypeMatrix: u32 = 5_u32;
-pub static FcTypeCharSet: u32 = 6_u32;
-pub static FcTypeFTFace: u32 = 7_u32;
-pub static FcTypeLangSet: u32 = 8_u32;
+pub const FcTypeVoid: u32 = 0_u32;
+pub const FcTypeInteger: u32 = 1_u32;
+pub const FcTypeDouble: u32 = 2_u32;
+pub const FcTypeString: u32 = 3_u32;
+pub const FcTypeBool: u32 = 4_u32;
+pub const FcTypeMatrix: u32 = 5_u32;
+pub const FcTypeCharSet: u32 = 6_u32;
+pub const FcTypeFTFace: u32 = 7_u32;
+pub const FcTypeLangSet: u32 = 8_u32;
 
 pub type FcType = enum__FcType;
 
-pub static FC_WEIGHT_THIN: c_int = 0;
-pub static FC_WEIGHT_EXTRALIGHT: c_int = 40;
-pub static FC_WEIGHT_ULTRALIGHT: c_int = FC_WEIGHT_EXTRALIGHT;
-pub static FC_WEIGHT_LIGHT: c_int = 50;
-pub static FC_WEIGHT_BOOK: c_int = 75;
-pub static FC_WEIGHT_REGULAR: c_int = 80;
-pub static FC_WEIGHT_NORMAL: c_int = FC_WEIGHT_REGULAR;
-pub static FC_WEIGHT_MEDIUM: c_int = 100;
-pub static FC_WEIGHT_DEMIBOLD: c_int = 180;
-pub static FC_WEIGHT_SEMIBOLD: c_int = FC_WEIGHT_DEMIBOLD;
-pub static FC_WEIGHT_BOLD: c_int = 200;
-pub static FC_WEIGHT_EXTRABOLD: c_int = 205;
-pub static FC_WEIGHT_ULTRABOLD: c_int = FC_WEIGHT_EXTRABOLD;
-pub static FC_WEIGHT_BLACK: c_int = 210;
-pub static FC_WEIGHT_HEAVY: c_int = FC_WEIGHT_BLACK;
-pub static FC_WEIGHT_EXTRABLACK: c_int = 215;
-pub static FC_WEIGHT_ULTRABLACK: c_int = FC_WEIGHT_EXTRABLACK;
+pub const FC_WEIGHT_THIN: c_int = 0;
+pub const FC_WEIGHT_EXTRALIGHT: c_int = 40;
+pub const FC_WEIGHT_ULTRALIGHT: c_int = FC_WEIGHT_EXTRALIGHT;
+pub const FC_WEIGHT_LIGHT: c_int = 50;
+pub const FC_WEIGHT_BOOK: c_int = 75;
+pub const FC_WEIGHT_REGULAR: c_int = 80;
+pub const FC_WEIGHT_NORMAL: c_int = FC_WEIGHT_REGULAR;
+pub const FC_WEIGHT_MEDIUM: c_int = 100;
+pub const FC_WEIGHT_DEMIBOLD: c_int = 180;
+pub const FC_WEIGHT_SEMIBOLD: c_int = FC_WEIGHT_DEMIBOLD;
+pub const FC_WEIGHT_BOLD: c_int = 200;
+pub const FC_WEIGHT_EXTRABOLD: c_int = 205;
+pub const FC_WEIGHT_ULTRABOLD: c_int = FC_WEIGHT_EXTRABOLD;
+pub const FC_WEIGHT_BLACK: c_int = 210;
+pub const FC_WEIGHT_HEAVY: c_int = FC_WEIGHT_BLACK;
+pub const FC_WEIGHT_EXTRABLACK: c_int = 215;
+pub const FC_WEIGHT_ULTRABLACK: c_int = FC_WEIGHT_EXTRABLACK;
 
-pub static FC_SLANT_ROMAN: c_int = 0;
-pub static FC_SLANT_ITALIC: c_int = 100;
-pub static FC_SLANT_OBLIQUE: c_int = 110;
+pub const FC_SLANT_ROMAN: c_int = 0;
+pub const FC_SLANT_ITALIC: c_int = 100;
+pub const FC_SLANT_OBLIQUE: c_int = 110;
 
+#[repr(C)]
 pub struct struct__FcMatrix {
     pub xx: c_double,
     pub xy: c_double,
@@ -65,6 +66,7 @@ pub type struct__FcCharSet = c_void;
 
 pub type FcCharSet = struct__FcCharSet;
 
+#[repr(C)]
 pub struct struct__FcObjectType {
     pub object: *mut c_char,
     pub _type: FcType,
@@ -72,6 +74,7 @@ pub struct struct__FcObjectType {
 
 pub type FcObjectType = struct__FcObjectType;
 
+#[repr(C)]
 pub struct struct__FcConstant {
     pub name: *mut FcChar8,
     pub object: *mut c_char,
@@ -81,11 +84,11 @@ pub struct struct__FcConstant {
 pub type FcConstant = struct__FcConstant;
 
 pub type enum__FcResult = c_uint;
-pub static FcResultMatch: u32 = 0_u32;
-pub static FcResultNoMatch: u32 = 1_u32;
-pub static FcResultTypeMismatch: u32 = 2_u32;
-pub static FcResultNoId: u32 = 3_u32;
-pub static FcResultOutOfMemory: u32 = 4_u32;
+pub const FcResultMatch: u32 = 0_u32;
+pub const FcResultNoMatch: u32 = 1_u32;
+pub const FcResultTypeMismatch: u32 = 2_u32;
+pub const FcResultNoId: u32 = 3_u32;
+pub const FcResultOutOfMemory: u32 = 4_u32;
 
 pub type FcResult = enum__FcResult;
 
@@ -97,6 +100,7 @@ pub type struct__FcLangSet = c_void;
 
 pub type FcLangSet = struct__FcLangSet;
 
+#[repr(C)]
 pub struct struct__FcValue {
     pub _type: FcType,
     pub u: union_unnamed1,
@@ -104,6 +108,7 @@ pub struct struct__FcValue {
 
 pub type FcValue = struct__FcValue;
 
+#[repr(C)]
 pub struct struct__FcFontSet {
     pub nfont: c_int,
     pub sfont: c_int,
@@ -112,6 +117,7 @@ pub struct struct__FcFontSet {
 
 pub type FcFontSet = struct__FcFontSet;
 
+#[repr(C)]
 pub struct struct__FcObjectSet {
     pub nobject: c_int,
     pub sobject: c_int,
@@ -121,23 +127,23 @@ pub struct struct__FcObjectSet {
 pub type FcObjectSet = struct__FcObjectSet;
 
 pub type enum__FcMatchKind = c_uint;
-pub static FcMatchPattern: u32 = 0_u32;
-pub static FcMatchFont: u32 = 1_u32;
-pub static FcMatchScan: u32 = 2_u32;
+pub const FcMatchPattern: u32 = 0_u32;
+pub const FcMatchFont: u32 = 1_u32;
+pub const FcMatchScan: u32 = 2_u32;
 
 pub type FcMatchKind = enum__FcMatchKind;
 
 pub type enum__FcLangResult = c_uint;
-pub static FcLangEqual: u32 = 0_u32;
-pub static FcLangDifferentCountry: u32 = 1_u32;
-pub static FcLangDifferentTerritory: u32 = 1_u32;
-pub static FcLangDifferentLang: u32 = 2_u32;
+pub const FcLangEqual: u32 = 0_u32;
+pub const FcLangDifferentCountry: u32 = 1_u32;
+pub const FcLangDifferentTerritory: u32 = 1_u32;
+pub const FcLangDifferentLang: u32 = 2_u32;
 
 pub type FcLangResult = enum__FcLangResult;
 
 pub type enum__FcSetName = c_uint;
-pub static FcSetSystem: u32 = 0_u32;
-pub static FcSetApplication: u32 = 1_u32;
+pub const FcSetSystem: u32 = 0_u32;
+pub const FcSetApplication: u32 = 1_u32;
 
 pub type FcSetName = enum__FcSetName;
 
@@ -147,8 +153,8 @@ pub type FcAtomic = struct__FcAtomic;
 
 
 pub type FcEndian = c_uint;
-pub static FcEndianBig: u32 = 0_u32;
-pub static FcEndianLittle: u32 = 1_u32;
+pub const FcEndianBig: u32 = 0_u32;
+pub const FcEndianLittle: u32 = 1_u32;
 
 pub type struct__FcConfig = c_void;
 
