@@ -53,6 +53,7 @@ pub const FC_SLANT_ITALIC: c_int = 100;
 pub const FC_SLANT_OBLIQUE: c_int = 110;
 
 #[repr(C)]
+#[derive(Copy)]
 pub struct struct__FcMatrix {
     pub xx: c_double,
     pub xy: c_double,
@@ -67,6 +68,7 @@ pub type struct__FcCharSet = c_void;
 pub type FcCharSet = struct__FcCharSet;
 
 #[repr(C)]
+#[allow(missing_copy_implementations)]
 pub struct struct__FcObjectType {
     pub object: *mut c_char,
     pub _type: FcType,
@@ -75,6 +77,7 @@ pub struct struct__FcObjectType {
 pub type FcObjectType = struct__FcObjectType;
 
 #[repr(C)]
+#[allow(missing_copy_implementations)]
 pub struct struct__FcConstant {
     pub name: *mut FcChar8,
     pub object: *mut c_char,
@@ -101,6 +104,7 @@ pub type struct__FcLangSet = c_void;
 pub type FcLangSet = struct__FcLangSet;
 
 #[repr(C)]
+#[allow(missing_copy_implementations)]
 pub struct struct__FcValue {
     pub _type: FcType,
     pub u: union_unnamed1,
@@ -109,6 +113,7 @@ pub struct struct__FcValue {
 pub type FcValue = struct__FcValue;
 
 #[repr(C)]
+#[allow(missing_copy_implementations)]
 pub struct struct__FcFontSet {
     pub nfont: c_int,
     pub sfont: c_int,
@@ -118,6 +123,7 @@ pub struct struct__FcFontSet {
 pub type FcFontSet = struct__FcFontSet;
 
 #[repr(C)]
+#[allow(missing_copy_implementations)]
 pub struct struct__FcObjectSet {
     pub nobject: c_int,
     pub sobject: c_int,
