@@ -12,8 +12,7 @@
 #![crate_type = "dylib"]
 #![crate_type = "rlib"]
 
-#![feature(globs)]
-
+#![allow(unstable)]
 extern crate libc;
 
 pub mod fontconfig;
