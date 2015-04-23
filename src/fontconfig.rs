@@ -53,7 +53,7 @@ pub const FC_SLANT_ITALIC: c_int = 100;
 pub const FC_SLANT_OBLIQUE: c_int = 110;
 
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Copy, Clone)]
 pub struct struct__FcMatrix {
     pub xx: c_double,
     pub xy: c_double,
