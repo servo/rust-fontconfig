@@ -190,11 +190,6 @@ pub type union_unnamed1 = c_void /* FIXME: union type */;
 
 
 
-// Work around non-deterministic linker argument ordering between
-// crates.
-#[link(name = "c")]
-#[link(name="fontconfig")]
-#[link(name = "c")]
 extern {
 
 pub fn FcBlanksCreate() -> *mut FcBlanks;
