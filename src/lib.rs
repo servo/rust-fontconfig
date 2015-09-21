@@ -13,5 +13,6 @@
 #![crate_type = "rlib"]
 
 extern crate libc;
+extern crate fontconfig_sys;
 
 pub mod fontconfig;
