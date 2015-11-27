@@ -1,10 +1,13 @@
 [package]
 name = "servo-fontconfig"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["The Servo Project Developers"]
 repository = "https://github.com/servo/rust-fontconfig/"
 description = "Rust bindings for fontconfig"
 license=  "MIT / Apache-2.0"
+
+[lib]
+name = "fontconfig"
 
 [dependencies]
 servo-fontconfig-sys = "2.11.1"
