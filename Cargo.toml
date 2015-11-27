@@ -7,4 +7,4 @@ authors = ["The Servo Project Developers"]
 git = "https://github.com/servo/libfontconfig"
 
 [dependencies]
-libc = "0.1"
+libc = "0.2"
