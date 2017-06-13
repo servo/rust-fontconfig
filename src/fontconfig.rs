@@ -376,7 +376,7 @@ pub fn FcObjectSetDestroy(os: *mut FcObjectSet);
 
 //pub fn FcObjectSetVaBuild(first: *mut c_char, va: *mut __va_list_tag) -> *mut FcObjectSet;
 
-pub fn FcObjectSetBuild(first: *mut c_char/* FIXME: variadic function */) -> *mut FcObjectSet;
+pub fn FcObjectSetBuild(first: *mut c_char, ...) -> *mut FcObjectSet;
 
 pub fn FcFontSetList(config: *mut FcConfig, sets: *mut *mut FcFontSet, nsets: c_int, p: *mut FcPattern, os: *mut FcObjectSet) -> *mut FcFontSet;
 
@@ -502,7 +502,7 @@ pub fn FcPatternGetLangSet(p: *mut FcPattern, object: *const c_char, n: c_int, l
 
 //pub fn FcPatternVaBuild(p: *mut FcPattern, va: *mut __va_list_tag) -> *mut FcPattern;
 
-pub fn FcPatternBuild(p: *mut FcPattern/* FIXME: variadic function */) -> *mut FcPattern;
+pub fn FcPatternBuild(p: *mut FcPattern, ...) -> *mut FcPattern;
 
 pub fn FcPatternFormat(pat: *mut FcPattern, format: *const FcChar8) -> *mut FcChar8;
 
