@@ -1,6 +1,6 @@
 # servo-fontconfig
 
-Rust bindings to [Fontconfig](http://fontconfig.org/).
+Rust bindings to [Fontconfig](https://fontconfig.org/).
 
 * [Documentation](https://docs.rs/servo-fontconfig)
 * [crates.io](https://crates.io/crates/servo-fontconfig)
