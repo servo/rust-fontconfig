@@ -1,6 +1,6 @@
 [package]
 name = "servo-fontconfig"
-version = "0.4.0"
+version = "0.5.0"
 authors = ["The Servo Project Developers"]
 repository = "https://github.com/servo/rust-fontconfig/"
 documentation = "https://docs.rs/servo-fontconfig"
