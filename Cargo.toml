@@ -11,5 +11,8 @@ license=  "MIT / Apache-2.0"
 name = "fontconfig"
 
 [dependencies]
-servo-fontconfig-sys = "5.0.0"
+servo-fontconfig-sys = "5.1.0"
 libc = "0.2"
+
+[features]
+force_system_lib = ["servo-fontconfig-sys/force_system_lib"]
